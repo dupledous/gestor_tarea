@@ -1,0 +1,47 @@
+body {
+      display: flex;
+      justify-content: center;  /* Centra horizontalmente */
+      align-items: center;      /* Centra verticalmente */
+      height: 100vh;            /* Ocupa toda la pantalla */
+      background-color: blue;
+      font-size: larger;
+    }
+    h2{
+        font: 2 em sans-serif;
+    }
+    form label {
+        font-size: larger;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      width: 100%;          /* Que ocupe todo el ancho disponible */
+      max-width: 600px;     /* Máximo ancho (se verá grande en pantallas grandes) */
+    }
+
+    input, textarea, button {
+      display: block;
+      width: 100%;          /* Que cada input ocupe todo el ancho */
+      padding: 12px;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+
+    @media screen and (max-width:768px){
+        body{display: flex;}
+    }

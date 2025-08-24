@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="conect.css">
+    <title>pagina principal</title>
+</head>
+<body>
+    <div>
+         <h2>Mis Tareas</h2>
+         <p> En mis tareas tu dia va estar ordenada no olvidara ningun tarea </p>
+    </div>
+    <div>
+        <!--conneccion de usuario guardado en localstorage-->
+        <form onsubmit="return connection(event)">
+            <input type="text" id="usuario" placeholder="nombre"><br>
+            <input type="password" id="contrasena" placeholder="contrasena"><br>
+            <button type="submit">iniciar</button><br><br>
+
+            <a href="conec.html">
+                <button type="button">crear cuenta</button>
+            </a>
+        </form>
+    </div>
+
+    <!--validacion de usuario con javascript -->
+    <script>
+        function connection(event){
+            let usuario=document.getElementById('usuario').value;
+            let contrasuena =document.getElementById('contrasena').value;
+            event.preventDefault();
+            if(usuario.trim()==''){
+                alert('ingresar tu nombre usuario');
+                return false;
+            };
+            if(contrasuena.trim()==''){
+                alert('ingresa tu contrasena');
+                return false;
+            };
+            if(usuario !== localStorage.getItem('Nombre')){
+                alert('nombre usuario no encuentrado');
+                return false;
+            };
+            if(contrasuena !== localStorage.getItem('Pass')){
+                alert('contrasena no encuentrado');
+                return false;
+            };
+            <!--si pasa entra al pagina tarea-->
+            window.location.href="tarea.html"
+            return true;
+
+        };
+         
+    </script>
+
+</body>
+</html>

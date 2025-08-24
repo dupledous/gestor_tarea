@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="conect.css">
+    <title>insribir</title>
+</head>
+<body >
+    <!--formulario de inscripcion-->
+    <div class="i">
+        <h2>formulario de inscripcion </h2>
+        <form onsubmit="return validarForm(event)">
+            <label for="nombre">nombre:</label>
+            <input  type="text" id="nombre" name="nombre" placeholder="ingresar nombre"><br>
+            <label for="cleve">password:</label>
+            <input type="password" id="clave" name="clave" placeholder="ingresar password"><br>
+            <label for="clave2">repetir password:</label>
+            <input type="password" name="clave2" id="clave2" placeholder="repetir el password"><br>
+            <button type="submit" style="border: 3cm; border-radius: 2cm; ">inscribir</button>
+        </form>
+    </div>
+
+    <!--validacion-->
+        <script>
+            function validarForm(event){
+                event.preventDefault();
+                let nombre=document.getElementById('nombre').value;
+                let password =document.getElementById('clave').value;
+                let repetir = document.getElementById('clave2').value;
+
+                if(nombre.trim()==''){
+                    alert("ingresar un bombre usuario");
+                    return false;
+                };
+                if(password.trim()==''){
+                    alert("tienes que ingresar un passwoerd");
+                    return false;
+                };
+                if(repetir.trim()==''){
+                    alert("ingresar de nuevo el password");
+                    return false;
+                };
+                if(repetir !== password){
+                    alert("no coincide");
+                    return false;
+                };
+               localStorage.setItem("Nombre",nombre);
+               localStorage.setItem("Pass",password);
+
+               alert("cuenta creada correctamente, Ahora Inicia sessions");
+               window.location.href="index.html"
+                return true;
+                
+            };
+        </script>
+            
+    </div>
+</body>
+</html>

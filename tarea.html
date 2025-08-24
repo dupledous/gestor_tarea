@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gestor.css">
+    <title>gestor de tarea  </title>
+</head>
+<!-- gestor de tarea con CRUD(crear,leer,actualizar,elimininar) + localStorage (guardar tarea) -->
+<body>
+     <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#formTarea">Crear tarea</a></li>
+                <li>
+                    <input type="search" id="buscar" placeholder="buscar">
+                    
+                </li>
+                <li><a href="index.html">Desconectar</a></li>
+            </ul>
+        </nav>
+     </header>
+     <main>
+        <!--formulario de tarea-->
+        <h2>Crear tarea</h2>
+        <form id="formTarea">
+            <input type="date" id="fecha" min="1900-01-01" max="2100-12-31" required><br><br>
+            <input type="text" id="nombre" placeholder="nombre de la tarea" required><br><br>
+            <label for="hora">Inicio</label>
+            <input type="time" id="hora" nombre="hora" min="00:00" max="23:59" required><br><br>
+            <label for="horaFin">Fin</label>
+            <input type="time" id="fin" nombre="horaFin" min="00:00" max="23:59" required><br><br>
+            <textarea type="text" id="comment" placeholder="commentario no es obligatorio"></textarea><br>
+            <button type="submit" id="agregar">Crear</button>
+        </form>
+        <!-- lista de tareas creadas -->
+        <h2>lista de tarea</h2>
+        <ul id="listaTarea">
+
+        </ul>
+        </div>
+        
+        
+     </main>
+     <!--el direccion del javascript-->
+
+     <script src="tarea.js"></script>
+     
+</body>
+</html>
